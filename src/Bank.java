@@ -22,14 +22,13 @@ public class Bank {
                 case 3: //WITHDRAW
                     withdrawAkun();
                     break;
-                case 4:
+                case 4: //KELUAR
                     break loop;
                 default:
                     System.out.println("\nPilihan tidak valid");
                     pause();
             }
         }
-
         System.out.println("\nTerima kasih. Sampai jumpa");
     }
 
@@ -50,6 +49,7 @@ public class Bank {
         for (int i = 0;i<akun.size();i++){
             System.out.println("\nAkun index ke- " + i);
             System.out.println("Nama: " + akun.get(i).getNamaPengguna());
+            System.out.println("Saldo: " + akun.get(i).getSaldo());
         }
     }
 
@@ -91,9 +91,10 @@ public class Bank {
             tampilkanAkun();
             System.out.print("\nPilih index akun untuk withdraw: ");
             int pilihanAkun = input.nextInt();
+            input.nextLine();
 
             if (pilihanAkun >= akun.size() || pilihanAkun < 0){
-                    System.out.println("Akun tidak tersedia");
+                    System.out.println("\nAkun tidak tersedia");
             } else {
                 System.out.print("Masukan jumlah uang yang ingin di withdraw: ");
                 int uang = input.nextInt();

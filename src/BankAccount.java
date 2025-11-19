@@ -1,5 +1,3 @@
-import java.util.Random;
-
 public class BankAccount {
     private String namaPengguna;
     private int saldo;
@@ -17,8 +15,6 @@ public class BankAccount {
     BankAccount(String namaPengguna){
         this.namaPengguna = namaPengguna;
         this.saldo = saldo;
-
-        Random random = new Random();
     }
 
     public String getNamaPengguna() {
@@ -61,8 +57,8 @@ public class BankAccount {
         } else{
             saldo -= (uang + biayaAdmin);
             System.out.println("\nWithdraw berhasil");
+            System.out.println("Biaya admin: " + biayaAdmin);
             System.out.println("Saldo anda: Rp" + saldo);
         }
     }
-
 }
