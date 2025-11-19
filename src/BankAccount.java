@@ -35,32 +35,32 @@ public class BankAccount {
 
     public void deposit(int uang){
         if (uang < MIN_DEPOSIT){
-            System.out.println("Minimal deposit Rp" + MIN_DEPOSIT);
+            System.out.println("\nMinimal deposit Rp" + MIN_DEPOSIT);
         } else if(uang > MAX_DEPOSIT){
-            System.out.println("Maximal deposit Rp" + MAX_DEPOSIT);
+            System.out.println("\nMaximal deposit Rp" + MAX_DEPOSIT);
         } else if(uang%kelipatan != 0){
-            System.out.println("Deposit harus kelipatan Rp" + kelipatan);
+            System.out.println("\nDeposit harus kelipatan Rp" + kelipatan);
         } else{
             saldo += uang;
-            System.out.println("Deposit berhasil");
+            System.out.println("\nDeposit berhasil");
             System.out.println("Saldo anda: Rp" + saldo);
         }
     }
 
     public void withdraw(int uang){
         if (uang < MIN_WITHDRAW){
-            System.out.println("Minimal withdraw Rp" + MIN_WITHDRAW);
+            System.out.println("\nMinimal withdraw Rp" + MIN_WITHDRAW);
         } else if(uang > MAX_WITHDRAW){
-            System.out.println("Maximal withdraw Rp" + MAX_WITHDRAW);
+            System.out.println("\nMaximal withdraw Rp" + MAX_WITHDRAW);
         } else if(uang%kelipatan != 0){
-            System.out.println("withdraw harus kelipatan Rp" + kelipatan);
+            System.out.println("\nWithdraw harus kelipatan Rp" + kelipatan);
         } else if(saldo-biayaAdmin < uang){
-            System.out.println("Saldo anda tidak cukup");
+            System.out.println("\nSaldo anda tidak cukup");
             System.out.println("Saldo anda: Rp" + saldo);
             System.out.println("Terdapat biaya admin Rp" + biayaAdmin);
         } else{
             saldo -= (uang + biayaAdmin);
-            System.out.println("withdraw berhasil");
+            System.out.println("\nWithdraw berhasil");
             System.out.println("Saldo anda: Rp" + saldo);
         }
     }

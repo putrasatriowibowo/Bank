@@ -25,7 +25,8 @@ public class Bank {
                 case 4:
                     break loop;
                 default:
-                    System.out.println("Pilihan tidak valid");
+                    System.out.println("\nPilihan tidak valid");
+                    pause();
             }
         }
 
@@ -57,7 +58,9 @@ public class Bank {
         String namaPengguna = input.nextLine();
 
         akun.add(new BankAccount(namaPengguna));
-        System.out.println("\nSelamat datang " + akun.get(akun.size()-1).getNamaPengguna());
+        System.out.println("\nAkun berhasil dibuat");
+        System.out.println("Selamat datang " + akun.get(akun.size()-1).getNamaPengguna());
+        pause();
     }
 
     static void depositAkun(){
@@ -67,15 +70,18 @@ public class Bank {
             tampilkanAkun();
             System.out.print("\nPilih index akun untuk deposit: ");
             int pilihanAkun = input.nextInt();
+            input.nextLine();
 
             if (pilihanAkun >= akun.size() || pilihanAkun < 0){
-                System.out.println("Akun tidak tersedia");
+                System.out.println("\nAkun tidak tersedia");
             } else {
-                System.out.print("Masukan jumlah uang yang ingin di deposit: ");
+                System.out.print("Masukan jumlah uang yang ingin di deposit di akun " + akun.get(pilihanAkun).getNamaPengguna() + ": ");
                 int uang = input.nextInt();
+                input.nextLine();
                 akun.get(pilihanAkun).deposit(uang);
             }
         }
+        pause();
     }
 
     static void withdrawAkun(){
@@ -91,8 +97,15 @@ public class Bank {
             } else {
                 System.out.print("Masukan jumlah uang yang ingin di withdraw: ");
                 int uang = input.nextInt();
+                input.nextLine();
                 akun.get(pilihanAkun).withdraw(uang);
             }
         }
+        pause();
+    }
+
+    static void pause(){
+        System.out.print("\nTekan enter untuk melanjutkan");
+        input.nextLine();
     }
 }
