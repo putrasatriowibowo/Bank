@@ -96,7 +96,7 @@ public class Bank {
             if (pilihanAkun >= akun.size() || pilihanAkun < 0){
                     System.out.println("\nAkun tidak tersedia");
             } else {
-                System.out.print("Masukan jumlah uang yang ingin di withdraw: ");
+                System.out.print("Masukan jumlah uang yang ingin di withdraw di akun " + akun.get(pilihanAkun).getNamaPengguna() + ": ");
                 int uang = input.nextInt();
                 input.nextLine();
                 akun.get(pilihanAkun).withdraw(uang);
